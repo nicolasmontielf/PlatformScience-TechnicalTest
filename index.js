@@ -62,12 +62,13 @@ const hasCommonFactors = (word1, word2) => {
 }
 
 /**
- * Take the array with format 
+ * Take the array of indexs and converted to and array of [[ driverName, addressName ]]
+ * 
  * @param {Array} arr - Array [[ driverIndex, addressIndex ]]
  * @param {string} arrDrivers - Plain array of all the drivers names
  * @param {string} arrDestinations - Plain array of all the destinations
  * 
- * @returns {bool}
+ * @returns {Array}
  */
 const getNameAndAddressMatches = (arr, arrDrivers, arrDestinations) => {
     return arr.map(val => {
@@ -126,7 +127,7 @@ const greetingCommandLine = () => {
 }
 
 /**
- * Manage the command line on the beginning.
+ * Manage the command line to get the inputs.
  * 
  * @returns {Object} { destinationFile, driversFile }
  */
@@ -166,6 +167,9 @@ const manageCommandLine = async () => {
         });
 }
 
+/**
+ * MAIN FUNCTION
+ */
 async function main() {
     greetingCommandLine()
 
